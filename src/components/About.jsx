@@ -3,12 +3,12 @@ import { Reveal } from './Reveal.jsx'
 
 export default function About() {
   return (
-    <section id="maison" className="section about" aria-labelledby="about-title">
+    <section id="univers" className="section about" aria-labelledby="about-title">
       <span className="vertical-mark" aria-hidden="true">Majestic India</span>
       <ElephantMark className="about__watermark" />
       <div className="container about__grid">
         <Reveal className="about__head">
-          <p className="eyebrow">Notre Maison</p>
+          <p className="eyebrow">Notre Univers</p>
           <h2 id="about-title" className="display">
             Une invitation <em>au voyage</em>
           </h2>

@@ -11,7 +11,7 @@ export const contact = {
 
 export const navLinks = [
   { label: 'Accueil', href: '/#accueil' },
-  { label: 'Notre Maison', href: '/#maison' },
+  { label: 'Notre Univers', href: '/#univers' },
   { label: 'La Carte', href: '/carte/' },
   { label: 'Galerie', href: '/#galerie' },
   { label: 'Contact', href: '/#contact' },
@@ -19,13 +19,15 @@ export const navLinks = [
 
 export const reserveHref = '/#reserver'
 
-// Placeholder photography (Unsplash licence) — replace with the restaurant's own photos, same file names.
+// Restaurant photos: salleMiroirs, barLounge, decorKrishna, caveElephants, terrasse.
+// Everything else is placeholder food photography (Unsplash licence) — replace with the restaurant's own.
 export const images = {
+  salleMiroirs: { src: '/images/salle-miroirs.webp', w: 1600, h: 1200, alt: 'La salle : miroirs dorés et banquettes vertes' },
+  barLounge: { src: '/images/bar-lounge.webp', w: 1600, h: 1200, alt: 'Le bar du lounge et ses suspensions' },
+  decorKrishna: { src: '/images/decor-krishna.webp', w: 1200, h: 1600, alt: 'Une table près d’une affiche de Krishna et de palmiers' },
+  caveElephants: { src: '/images/cave-elephants.webp', w: 1600, h: 1200, alt: 'La bibliothèque à vins encadrée de têtes d’éléphant', pos: '30% center' },
+  terrasse: { src: '/images/terrasse.webp', w: 1400, h: 1050, alt: 'La terrasse sous l’auvent vert' },
   hero: { src: '/images/hero-table.webp', srcSet: '/images/hero-table-1200.webp 1200w, /images/hero-table.webp 2200w', w: 2200, h: 1467, alt: 'Table dressée à la lueur des bougies' },
-  salle: { src: '/images/salle.webp', w: 1600, h: 1067, alt: 'La salle, lumière tamisée' },
-  cocktails: { src: '/images/cocktails.webp', w: 1100, h: 667, alt: 'Cocktails au bar du lounge' },
-  laiton: { src: '/images/laiton.webp', w: 1000, h: 1777, alt: 'Curry servi dans un plat en laiton' },
-  loungeBar: { src: '/images/lounge-bar.webp', w: 1400, h: 1050, alt: 'Le bar du lounge' },
   whisky: { src: '/images/whisky.webp', w: 1100, h: 735, alt: 'Un verre servi au bar' },
   spread: { src: '/images/spread.webp', w: 1400, h: 758, alt: 'Currys et naans partagés à table' },
   curryPan: { src: '/images/curry-pan.webp', w: 1100, h: 1466, alt: 'Curry mijoté' },

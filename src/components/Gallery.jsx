@@ -8,7 +8,7 @@ const shots = [
   { area: 'c', image: images.curryPan, sizes: '(min-width: 900px) 25vw, 50vw' },
   { area: 'd', image: images.thali, sizes: '(min-width: 900px) 25vw, 50vw' },
   { area: 'e', image: images.biryaniPortrait, sizes: '(min-width: 900px) 25vw, 50vw' },
-  { area: 'f', image: images.loungeBar, sizes: '(min-width: 900px) 50vw, 100vw' },
+  { area: 'f', image: images.caveElephants, sizes: '(min-width: 900px) 50vw, 100vw' },
   { area: 'g', image: images.curryDeep, sizes: '(min-width: 900px) 25vw, 50vw' },
   { area: 'h', image: images.biryaniDark, sizes: '(min-width: 900px) 25vw, 50vw' },
 ]
@@ -26,7 +26,7 @@ export default function Gallery() {
             </h2>
           </div>
           <p className="section-head__lead">
-            Épices, laiton, lumière tamisée&nbsp;: un aperçu de l’atmosphère qui vous attend.
+            Épices, miroirs dorés, lumière tamisée&nbsp;: un aperçu de l’atmosphère qui vous attend.
           </p>
         </Reveal>
         <ul className="gallery__grid">

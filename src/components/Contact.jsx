@@ -38,7 +38,7 @@ export default function Contact() {
             </div>
           </dl>
         </Reveal>
-        <RevealImage image={images.loungeBar} className="contact__img" sizes="(min-width: 900px) 45vw, 100vw" />
+        <RevealImage image={images.terrasse} className="contact__img" sizes="(min-width: 900px) 45vw, 100vw" />
       </div>
     </section>
   )

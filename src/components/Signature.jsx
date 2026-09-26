@@ -6,11 +6,11 @@ export default function Signature() {
     <section className="section signature" aria-labelledby="signature-title">
       <div className="container signature__grid">
         <div className="signature__main">
-          <RevealImage image={images.salle} sizes="(min-width: 900px) 58vw, 100vw" />
+          <RevealImage image={images.salleMiroirs} sizes="(min-width: 900px) 58vw, 100vw" />
           <span className="tag">L’Expérience Majestic</span>
         </div>
         <div className="signature__side">
-          <RevealImage image={images.cocktails} delay={0.15} />
+          <RevealImage image={images.barLounge} delay={0.15} />
           <Reveal className="signature__caption" delay={0.2}>
             <h2 id="signature-title" className="display-sm">
               Restaurant <em>&amp; lounge</em>
@@ -20,7 +20,7 @@ export default function Signature() {
               la mangue, puis la table, ses currys et ses naans tout juste sortis du tandoor.
             </p>
           </Reveal>
-          <RevealImage image={images.laiton} className="signature__small" delay={0.3} />
+          <RevealImage image={images.decorKrishna} className="signature__small" delay={0.3} />
         </div>
       </div>
     </section>

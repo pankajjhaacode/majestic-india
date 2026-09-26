@@ -58,7 +58,7 @@ export default function Hero() {
         </m.div>
       </div>
 
-      <a href="#maison" className="hero__scroll">
+      <a href="#univers" className="hero__scroll">
         <span>Défiler</span>
         <i aria-hidden="true" />
       </a>

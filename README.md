@@ -38,5 +38,6 @@ Extracted from the vector logo PDF with no redrawing. SVG + 2400px PNG for each:
 
 ## Photography
 
-`public/images/*` are **placeholder** photos (Unsplash licence) chosen for mood. Replace them with the
+`salle-miroirs`, `bar-lounge`, `decor-krishna`, `cave-elephants` and `terrasse` are the restaurant's own photos
+(from `public/other-images/`). The food photos and hero are **placeholders** (Unsplash licence) — replace them with the
 restaurant's own photos, keeping the file names, and update the dimensions and alt text in `src/data/site.js`.

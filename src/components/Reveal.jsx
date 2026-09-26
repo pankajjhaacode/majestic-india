@@ -37,6 +37,7 @@ export function RevealImage({ image, className = '', sizes = '100vw', eager = fa
         height={image.h}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
+        style={image.pos ? { objectPosition: image.pos } : undefined}
         initial={{ scale: 1.03 }}
         whileInView={{ scale: 1 }}
         viewport={viewport}
