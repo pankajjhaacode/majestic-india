@@ -11,7 +11,7 @@ export const contact = {
 
 export const navLinks = [
   { label: 'Accueil', href: '/#accueil' },
-  { label: 'Notre Univers', href: '/#univers' },
+  { label: 'Le Restaurant', href: '/#restaurant' },
   { label: 'La Carte', href: '/carte/' },
   { label: 'Galerie', href: '/#galerie' },
   { label: 'Contact', href: '/#contact' },

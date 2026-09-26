@@ -3,29 +3,34 @@ import { Reveal } from './Reveal.jsx'
 
 export default function About() {
   return (
-    <section id="univers" className="section about" aria-labelledby="about-title">
+    <section id="restaurant" className="section about" aria-labelledby="about-title">
       <span className="vertical-mark" aria-hidden="true">Majestic India</span>
       <ElephantMark className="about__watermark" />
       <div className="container about__grid">
         <Reveal className="about__head">
-          <p className="eyebrow">Notre Univers</p>
+          <p className="eyebrow">Le Restaurant</p>
           <h2 id="about-title" className="display">
             Une invitation <em>au voyage</em>
           </h2>
         </Reveal>
         <Reveal className="about__body" delay={0.15}>
           <p className="lead">
-            Chez Majestic India, l’Inde se raconte à voix basse&nbsp;: le parfum des épices, la chaleur du tandoor, la
-            lumière douce d’un lounge où l’on prend le temps.
+            Majestic India est né d’une envie simple&nbsp;: partager la richesse de la cuisine indienne dans un lieu
+            élégant et chaleureux, où chaque repas devient un moment à part.
           </p>
           <p>
-            Des grillades marinées aux herbes fraîches aux currys longuement mijotés, des biryanis au riz basmati safrané
-            aux naans cuits dans le four traditionnel en terre cuite, chaque plat est préparé avec soin, fidèle aux
-            traditions de la cuisine indienne.
+            En cuisine, les épices sont au cœur de tout. Viandes et poissons marinés puis grillés au tandoor, currys
+            mijotés avec patience, biryanis au riz basmati safrané, naans cuits dans le four traditionnel en terre
+            cuite&nbsp;: nous préparons chaque plat avec soin, dans le respect des saveurs de l’Inde, du Nord au Sud.
           </p>
           <p>
-            Un dîner à deux, une table entre amis ou un verre au lounge&nbsp;: à Paris, nous vous recevons avec
-            l’hospitalité chaleureuse qui fait le charme de l’Inde.
+            La salle, avec ses miroirs dorés, ses banquettes vert profond et ses objets venus d’Inde, invite à prendre le
+            temps. Au lounge, on s’attarde autour d’un cocktail ou d’un lassi&nbsp;; aux beaux jours, la terrasse vous
+            accueille à l’ombre de son auvent.
+          </p>
+          <p>
+            Dîner en tête-à-tête, repas en famille ou soirée entre amis&nbsp;: à Paris, nous vous recevons avec
+            l’hospitalité généreuse qui fait le charme de l’Inde. Bienvenue chez vous, bienvenue chez Majestic India.
           </p>
           <a className="link-arrow" href="/carte/">
             Découvrir la carte
