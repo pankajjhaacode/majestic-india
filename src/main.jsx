@@ -6,6 +6,6 @@ import './index.css'
 const root = document.getElementById('root')
 createRoot(root).render(
   <StrictMode>
-    <App page={root.dataset.page} />
+    <App lang={root.dataset.lang} page={root.dataset.page} />
   </StrictMode>,
 )

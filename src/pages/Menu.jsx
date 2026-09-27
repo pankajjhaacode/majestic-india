@@ -1,13 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { m } from 'framer-motion'
 import ElephantMark from '../components/ElephantMark.jsx'
 import ElephantDivider from '../components/ElephantDivider.jsx'
 import MenuCategory from '../components/MenuCategory.jsx'
 import { ease } from '../components/Reveal.jsx'
-import { menu } from '../data/menu.js'
+import { localizeMenu } from '../data/localizeMenu.js'
+import { useLang } from '../i18n/index.jsx'
 import { contact } from '../data/site.js'
 
 export default function Menu() {
+  const { lang, t } = useLang()
+  const menu = useMemo(() => localizeMenu(lang), [lang])
   const [active, setActive] = useState(menu[0].id)
   const trackRef = useRef(null)
 
@@ -27,7 +30,7 @@ export default function Menu() {
     )
     menu.forEach((c) => io.observe(document.getElementById(c.id)))
     return () => io.disconnect()
-  }, [])
+  }, [menu])
 
   // Keep the active chip centred in the horizontally scrolling bar.
   useEffect(() => {
@@ -49,15 +52,13 @@ export default function Menu() {
           <ElephantMark className="menu-hero__mark" />
           <p className="eyebrow eyebrow--center">Majestic India</p>
           <h1 className="display display--xl">
-            Ma <em>Carte</em>
+            {t.menuPage.title[0]} <em>{t.menuPage.title[1]}</em>
           </h1>
-          <p className="menu-hero__lead">
-            Apéritifs, tandoori, currys, biryanis, naans faits maison, desserts et la cave de Majestic India.
-          </p>
+          <p className="menu-hero__lead">{t.menuPage.lead}</p>
         </m.div>
       </header>
 
-      <nav className="menu-nav" aria-label="Rubriques de la carte">
+      <nav className="menu-nav" aria-label={t.menuPage.navAria}>
         <ul className="menu-nav__track" ref={trackRef}>
           {menu.map((c) => (
             <li key={c.id}>
@@ -75,9 +76,10 @@ export default function Menu() {
         ))}
         <footer className="menu-body__end">
           <ElephantDivider />
-          <p className="menu-body__net">Prix nets</p>
+          <p className="menu-body__net">{t.menuPage.net}</p>
           <p>
-            Pour réserver&nbsp;: <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
+            {t.menuPage.reserveLine}
+            <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
           </p>
         </footer>
       </div>

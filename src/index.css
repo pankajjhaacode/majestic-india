@@ -472,11 +472,11 @@ ol {
   align-items: center;
   gap: clamp(20px, 3vw, 44px);
 }
-.nav__links ul {
+.nav__list {
   display: flex;
   gap: clamp(18px, 2.6vw, 40px);
 }
-.nav__links ul a {
+.nav__list a {
   position: relative;
   display: inline-block;
   padding-block: 8px;
@@ -486,7 +486,7 @@ ol {
   text-transform: uppercase;
   color: var(--cream);
 }
-.nav__links ul a::after {
+.nav__list a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -498,8 +498,8 @@ ol {
   transform-origin: right;
   transition: transform 0.5s var(--ease);
 }
-.nav__links ul a:hover::after,
-.nav__links ul a[aria-current='page']::after {
+.nav__list a:hover::after,
+.nav__list a[aria-current='page']::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -541,6 +541,46 @@ ol {
   transform: translateY(-3.5px) rotate(-45deg);
 }
 
+/* Language switcher: FR · EN */
+.lang {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+.lang li + li::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin-inline: 2px;
+  background: currentColor;
+  opacity: 0.35;
+  vertical-align: middle;
+}
+.lang a {
+  display: inline-block;
+  padding: 10px 8px;
+  color: rgba(244, 240, 229, 0.55);
+  transition: color 0.4s var(--ease);
+}
+.lang a:hover,
+.lang a[aria-current='true'] {
+  color: var(--gold-soft);
+}
+.nav__links .lang {
+  margin-left: -8px;
+  color: var(--cream);
+}
+.lang--mobile {
+  margin: 4px 0 8px -8px;
+  font-size: 13px;
+}
+.lang--footer a {
+  padding-block: 4px;
+}
+
 @media (max-width: 1024px) {
   .nav__links {
     display: none;
@@ -561,11 +601,11 @@ ol {
   background: var(--forest-dark);
   overflow-y: auto;
 }
-.mnav ul {
+.mnav nav ul {
   display: grid;
   gap: 6px;
 }
-.mnav ul a {
+.mnav nav ul a {
   display: inline-block;
   padding-block: 6px;
   font-family: var(--font-display);
@@ -576,8 +616,8 @@ ol {
   text-transform: uppercase;
   color: var(--cream);
 }
-.mnav ul a[aria-current='page'],
-.mnav ul a:hover {
+.mnav nav ul a[aria-current='page'],
+.mnav nav ul a:hover {
   color: var(--gold-soft);
 }
 .mnav__foot {

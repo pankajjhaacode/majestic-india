@@ -1,25 +1,21 @@
 import ElephantPattern from './ElephantPattern.jsx'
+import LangSwitch from './LangSwitch.jsx'
 import { contact, navLinks, reserveHref } from '../data/site.js'
+import { useLang } from '../i18n/index.jsx'
 
-export default function Footer() {
+export default function Footer({ page }) {
+  const { t, paths } = useLang()
   return (
     <footer className="footer">
       <ElephantPattern className="footer__pattern" rows={2} />
       <div className="container footer__top">
-        <img
-          className="footer__logo"
-          src="/brand/logo-transparent.svg"
-          alt="Majestic India — Lounge & Restaurant Indien"
-          width="1025"
-          height="492"
-          loading="lazy"
-        />
+        <img className="footer__logo" src="/brand/logo-transparent.svg" alt={t.nav.logoAlt} width="1025" height="492" loading="lazy" />
       </div>
       <div className="container footer__cols">
-        <nav aria-label="Pied de page">
-          <h2 className="footer__h">Navigation</h2>
+        <nav aria-label={t.nav.footerAria}>
+          <h2 className="footer__h">{t.footer.navigation}</h2>
           <ul>
-            {[...navLinks, { label: 'Réserver', href: reserveHref }].map((l) => (
+            {[...navLinks(t, paths), { label: t.nav.reserve, href: reserveHref(paths) }].map((l) => (
               <li key={l.href}>
                 <a href={l.href}>{l.label}</a>
               </li>
@@ -27,7 +23,7 @@ export default function Footer() {
           </ul>
         </nav>
         <div>
-          <h2 className="footer__h">Contact</h2>
+          <h2 className="footer__h">{t.footer.contact}</h2>
           <ul>
             <li>
               <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
@@ -38,7 +34,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h2 className="footer__h">Suivez-nous</h2>
+          <h2 className="footer__h">{t.footer.follow}</h2>
           <ul>
             <li>
               <a href={contact.instagram} target="_blank" rel="noopener noreferrer">
@@ -55,7 +51,8 @@ export default function Footer() {
       </div>
       <div className="container footer__bottom">
         <p>© 2026 Majestic India</p>
-        <p>Lounge &amp; Restaurant Indien · Prix nets</p>
+        <LangSwitch page={page} className="lang--footer" />
+        <p>Lounge &amp; Restaurant Indien · {t.footer.net}</p>
       </div>
     </footer>
   )

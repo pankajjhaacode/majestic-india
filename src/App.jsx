@@ -3,18 +3,28 @@ import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Menu from './pages/Menu.jsx'
+import { LangProvider, useLang } from './i18n/index.jsx'
 
-export default function App({ page }) {
+function Skip() {
+  const { t } = useLang()
   return (
-    <LazyMotion features={domAnimation} strict>
-      <MotionConfig reducedMotion="user">
-        <a className="skip-link" href="#main">
-          Aller au contenu
-        </a>
-        <Navbar page={page} />
-        <main id="main">{page === 'menu' ? <Menu /> : <Home />}</main>
-        <Footer />
-      </MotionConfig>
-    </LazyMotion>
+    <a className="skip-link" href="#main">
+      {t.skip}
+    </a>
+  )
+}
+
+export default function App({ lang, page }) {
+  return (
+    <LangProvider lang={lang}>
+      <LazyMotion features={domAnimation} strict>
+        <MotionConfig reducedMotion="user">
+          <Skip />
+          <Navbar page={page} />
+          <main id="main">{page === 'menu' ? <Menu /> : <Home />}</main>
+          <Footer page={page} />
+        </MotionConfig>
+      </LazyMotion>
+    </LangProvider>
   )
 }

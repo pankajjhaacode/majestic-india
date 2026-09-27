@@ -1,5 +1,6 @@
 import { Reveal, RevealImage } from './Reveal.jsx'
 import { images } from '../data/site.js'
+import { useLang } from '../i18n/index.jsx'
 
 // Grid areas a–h are laid out in index.css (.gallery__grid) per breakpoint.
 const shots = [
@@ -14,20 +15,20 @@ const shots = [
 ]
 
 export default function Gallery() {
+  const { t } = useLang()
+  const g = t.gallery
   return (
     <section id="galerie" className="section gallery" aria-labelledby="gallery-title">
       <span className="vertical-mark vertical-mark--right" aria-hidden="true">Majestic India</span>
       <div className="container">
         <Reveal className="section-head section-head--split">
           <div>
-            <p className="eyebrow">Galerie</p>
+            <p className="eyebrow">{g.eyebrow}</p>
             <h2 id="gallery-title" className="display">
-              Instants <em>choisis</em>
+              {g.title[0]} <em>{g.title[1]}</em>
             </h2>
           </div>
-          <p className="section-head__lead">
-            Épices, miroirs dorés, lumière tamisée&nbsp;: un aperçu de l’atmosphère qui vous attend.
-          </p>
+          <p className="section-head__lead">{g.lead}</p>
         </Reveal>
         <ul className="gallery__grid">
           {shots.map((s, i) => (

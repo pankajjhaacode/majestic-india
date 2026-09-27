@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 import ElephantMark from './ElephantMark.jsx'
 import { ease } from './Reveal.jsx'
 import { images, reserveHref } from '../data/site.js'
+import { useLang } from '../i18n/index.jsx'
 
 const rise = (delay) => ({
   initial: { opacity: 0, y: 24 },
@@ -11,6 +12,7 @@ const rise = (delay) => ({
 
 export default function Hero() {
   const { hero } = images
+  const { t, paths } = useLang()
   return (
     <section id="accueil" className="hero" aria-labelledby="hero-title">
       <m.img
@@ -46,20 +48,20 @@ export default function Hero() {
           aria-hidden="true"
         />
         <m.p className="hero__tagline" {...rise(0.95)}>
-          Une expérience indienne d’exception au cœur de Paris.
+          {t.hero.tagline}
         </m.p>
         <m.div className="hero__ctas" {...rise(1.1)}>
-          <a className="btn btn--light" href="/carte/">
-            Découvrir la carte
+          <a className="btn btn--light" href={paths.menu}>
+            {t.hero.discover}
           </a>
-          <a className="btn btn--gold" href={reserveHref}>
-            Réserver une table
+          <a className="btn btn--gold" href={reserveHref(paths)}>
+            {t.hero.reserve}
           </a>
         </m.div>
       </div>
 
       <a href="#restaurant" className="hero__scroll">
-        <span>Défiler</span>
+        <span>{t.hero.scroll}</span>
         <i aria-hidden="true" />
       </a>
     </section>

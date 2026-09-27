@@ -1,4 +1,5 @@
 import { m } from 'framer-motion'
+import { useLang } from '../i18n/index.jsx'
 
 export const ease = [0.22, 1, 0.36, 1]
 const viewport = { once: true, margin: '0px 0px -12% 0px' }
@@ -20,6 +21,7 @@ export function Reveal({ as = 'div', delay = 0, y = 28, children, ...rest }) {
 
 // Image that unveils with a clip-path wipe and settles from 1.03 to 1.
 export function RevealImage({ image, className = '', sizes = '100vw', eager = false, delay = 0 }) {
+  const { lang } = useLang()
   return (
     <m.div
       className={`reveal-img ${className}`}
@@ -32,7 +34,7 @@ export function RevealImage({ image, className = '', sizes = '100vw', eager = fa
         src={image.src}
         srcSet={image.srcSet}
         sizes={image.srcSet ? sizes : undefined}
-        alt={image.alt}
+        alt={image.alt[lang]}
         width={image.w}
         height={image.h}
         loading={eager ? 'eager' : 'lazy'}

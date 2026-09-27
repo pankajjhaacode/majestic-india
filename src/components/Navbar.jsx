@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, m } from 'framer-motion'
 import { navLinks, reserveHref, contact } from '../data/site.js'
+import { useLang } from '../i18n/index.jsx'
+import LangSwitch from './LangSwitch.jsx'
 import { ease } from './Reveal.jsx'
 import ElephantMark from './ElephantMark.jsx'
 
 export default function Navbar({ page }) {
+  const { t, paths } = useLang()
+  const links = navLinks(t, paths)
+  const reserve = reserveHref(paths)
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const headerRef = useRef(null)
@@ -48,18 +53,18 @@ export default function Navbar({ page }) {
     }
   }, [open])
 
-  const current = (href) => (page === 'menu' && href === '/carte/' ? 'page' : undefined)
+  const current = (href) => (page === 'menu' && href === paths.menu ? 'page' : undefined)
 
   return (
     <header ref={headerRef} className={`nav${open ? ' nav--open' : scrolled ? ' nav--solid' : ''}`}>
       <div className="nav__inner">
-        <a href="/" className="nav__logo">
-          <img src="/brand/logo-transparent.svg" alt="Majestic India — Lounge & Restaurant Indien" width="1025" height="492" />
+        <a href={paths.home} className="nav__logo">
+          <img src="/brand/logo-transparent.svg" alt={t.nav.logoAlt} width="1025" height="492" />
         </a>
 
-        <nav className="nav__links" aria-label="Navigation principale">
-          <ul>
-            {navLinks.map((l) => (
+        <nav className="nav__links" aria-label={t.nav.mainAria}>
+          <ul className="nav__list">
+            {links.map((l) => (
               <li key={l.href}>
                 <a href={l.href} aria-current={current(l.href)}>
                   {l.label}
@@ -67,9 +72,10 @@ export default function Navbar({ page }) {
               </li>
             ))}
           </ul>
-          <a className="btn btn--outline btn--sm" href={reserveHref}>
-            Réserver
+          <a className="btn btn--outline btn--sm" href={reserve}>
+            {t.nav.reserve}
           </a>
+          <LangSwitch page={page} />
         </nav>
 
         <button
@@ -80,7 +86,7 @@ export default function Navbar({ page }) {
           aria-controls="mobile-menu"
           onClick={() => setOpen((o) => !o)}
         >
-          <span className="sr-only">{open ? 'Fermer le menu' : 'Ouvrir le menu'}</span>
+          <span className="sr-only">{open ? t.nav.close : t.nav.open}</span>
           <span className="nav__bar" aria-hidden="true" />
           <span className="nav__bar" aria-hidden="true" />
         </button>
@@ -93,15 +99,15 @@ export default function Navbar({ page }) {
             className="mnav"
             role="dialog"
             aria-modal="true"
-            aria-label="Menu"
+            aria-label={t.nav.dialogAria}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease }}
           >
-            <nav aria-label="Navigation mobile">
+            <nav aria-label={t.nav.mobileAria}>
               <ul>
-                {[...navLinks, { label: 'Réserver', href: reserveHref }].map((l, i) => (
+                {[...links, { label: t.nav.reserve, href: reserve }].map((l, i) => (
                   <m.li
                     key={l.href}
                     initial={{ opacity: 0, y: 16 }}
@@ -117,6 +123,7 @@ export default function Navbar({ page }) {
             </nav>
             <div className="mnav__foot">
               <ElephantMark className="mnav__mark" />
+              <LangSwitch page={page} className="lang--mobile" />
               <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
               <a href={`mailto:${contact.email}`}>{contact.email}</a>
             </div>

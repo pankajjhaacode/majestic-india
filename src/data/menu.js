@@ -1,4 +1,5 @@
 // Transcribed verbatim from "MENU MAJESTIC INDIA.pdf" (12 pages). Source of truth — do not edit prices here without the printed menu.
+// French as printed; English lives in menu.en.js (the printed English lines were moved there).
 // An item has either `price` (string, as printed) or `prices` ([{ label, value }]) when the menu lists several sizes.
 
 export const menu = [
@@ -206,9 +207,9 @@ export const menu = [
       {
         title: 'Assortiments de plats',
         items: [
-          { name: 'Assortiment Mysore', desc: 'Poulet tandoori, salade, mixte légumes curry, riz et nan fromage', descEn: 'Chicken tandoori, salad, mix vegetable curry, rice and cheese nan', price: '20,00 €' },
-          { name: 'Assortiment Delhi', desc: 'Agneau tikka, salade, mixte legumes curry, riz et nan fromage', descEn: 'Lamb tikka, salad, mix vegetable curry, rice and cheese nan', price: '22,00 €' },
-          { name: 'Assortiment Goa', desc: "Gambas Tandoori, Salade, Caviar d'Aubergine, Riz et Nan Fromage", descEn: 'Prawns Tandoori, salad, egg plant curry, Rice and Cheese Nan', price: '30,00 €' },
+          { name: 'Assortiment Mysore', desc: 'Poulet tandoori, salade, mixte légumes curry, riz et nan fromage', price: '20,00 €' },
+          { name: 'Assortiment Delhi', desc: 'Agneau tikka, salade, mixte legumes curry, riz et nan fromage', price: '22,00 €' },
+          { name: 'Assortiment Goa', desc: "Gambas Tandoori, Salade, Caviar d'Aubergine, Riz et Nan Fromage", price: '30,00 €' },
         ],
       },
     ],
@@ -278,7 +279,6 @@ export const menu = [
           {
             items: [
               { name: 'Poulet shahi korma ou Butter chicken avec du riz basmati', desc: '1 verre de jus de fruit (au choix) et une boule de glace (au choix)' },
-              { name: 'Chicken shahi korma or butter chicken with Basmati rice', desc: '1 Glass of juice and one ice-cream scoop of your choice.' },
             ],
           },
         ],
